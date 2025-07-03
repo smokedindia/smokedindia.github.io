@@ -22,13 +22,11 @@ a.author:active { color: #BBBBBB; }
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand">Youngjoon Jang</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav me-auto">
             <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
             </li>
@@ -42,9 +40,8 @@ a.author:active { color: #BBBBBB; }
             <a class="nav-link" href="#contact">Contact</a>
             </li>
         </ul>
-        <div class="d-flex ms-auto">
-            <button id="darkModeToggle" class="btn btn-outline-light btn-sm">Dark Mode</button>
-        </div>
+        <!-- Dark mode toggle -->
+        <button id="darkModeToggle" class="btn btn-outline-light btn-sm">Dark Mode</button>
         </div>
     </div>
     </nav>
