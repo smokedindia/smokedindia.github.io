@@ -140,10 +140,10 @@ body.dark-mode * {
 
 .pub-thumbnail-placeholder {
     width: 100%;
-    max-width: 256px; /* 고정된 최대 가로 사이즈 */
-    aspect-ratio: 16 / 9; /* 비율 유지 */
+    padding-top: 56.25%; /* 16:9 비율 유지 */
     background-color: transparent;
     border: 2px dashed #ccc;
     border-radius: 0.5rem;
     position: relative;
 }
+
