@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "J. Jung": "https://sites.google.com/view/jaeminjung/",
         "J. W. Cho": "https://chojw.github.io/",
         "D. Kim": "https://sites.google.com/site/djkimcv",
-        
+        "Y. Jang": "https://art-jang.github.io",
     };
 
     const pubDivs = document.querySelectorAll("#pubs .card-body");
@@ -357,16 +357,28 @@ document.addEventListener("DOMContentLoaded", function () {
         for (const [name, link] of Object.entries(authors)) {
             const safeName = name.replace(/\./g, "\\.");
             const regex = new RegExp(`\\b${safeName}\\b`, "g");
-            div.innerHTML = div.innerHTML.replace(
-                regex,
-                `<a class="author" href="${link}" target="_blank">${name}</a>`
-            );
+
+            let displayHTML;
+            if (name === "Y. Jang") {
+                displayHTML = `<a class="author" href="${link}" target="_blank"><strong>${name}</strong></a>`;
+            } else {
+                displayHTML = `<a class="author" href="${link}" target="_blank">${name}</a>`;
+            }
+
+            div.innerHTML = div.innerHTML.replace(regex, displayHTML);
         }
     });
 
-    // 2) 다크모드 토글 버튼 이벤트 연결
+    // 2) 시스템 다크모드 설정에 따라 자동 적용
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+        document.body.classList.add('dark-mode');
+    }
+
+    // 3) 다크모드 토글 버튼 이벤트 연결
     const toggleBtn = document.getElementById('darkModeToggle');
     if (toggleBtn) {
+        toggleBtn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
         toggleBtn.addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
             this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
@@ -374,6 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 </script>
+
 
 </body>
 </html>
