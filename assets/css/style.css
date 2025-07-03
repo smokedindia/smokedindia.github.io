@@ -137,3 +137,23 @@ body.dark-mode * {
   color: #e0e0e0 !important;
 }
 */
+
+.pub-thumbnail-placeholder {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 비율 유지 */
+    background-color: transparent;
+    border: 2px dashed #ccc;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.pub-thumbnail-placeholder::after {
+    content: "Thumbnail";
+    color: #999;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-style: italic;
+}
