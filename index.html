@@ -22,29 +22,25 @@ a.author:active { color: #BBBBBB; }
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand">Youngjoon Jang</a>
-        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#aboutme">About me</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#pubs">Publications</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-            </li>
+        <ul class="navbar-nav">
+            <!-- 네비 메뉴들 -->
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#aboutme">About me</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pubs">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <!-- Dark mode toggle -->
-        <button id="darkModeToggle" class="btn btn-outline-light btn-sm">Dark Mode</button>
+        <!-- 오른쪽 끝에 다크모드 토글 버튼 -->
+        <button id="darkModeToggle" class="btn btn-outline-light btn-sm ms-auto">Dark Mode</button>
         </div>
     </div>
     </nav>
+
     <!-- Page Content -->
     <br>
     <!-- Page Content -->
@@ -341,9 +337,9 @@ a.author:active { color: #BBBBBB; }
         </div>
     </section>
 
-<!-- Automatically link author names in publications -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    // 1) Authors 링크 자동화
     const authors = {
         "J. Kim": "https://sites.google.com/view/jhoonkim/",
         "J. S. Chung": "https://mm.kaist.ac.kr/joon/",
@@ -363,19 +359,18 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
     });
+
+    // 2) 다크모드 토글 버튼 이벤트 연결
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    }
 });
 </script>
 
-<script>
-  document.getElementById('darkModeToggle').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-    if(document.body.classList.contains('dark-mode')) {
-      this.textContent = 'Light Mode';
-    } else {
-      this.textContent = 'Dark Mode';
-    }
-  });
-</script>
 
 </body>
 </html>
