@@ -130,14 +130,14 @@ a.author:active { color: #BBBBBB; }
                       </div>
                       <div class="card-body border-bottom"> 
                         <b>CrossSpeech++: Cross-lingual Speech Synthesis with Decoupled Language and Speaker Generation</b><br>
-                        <a href="https://sites.google.com/view/jhoonkim/" class="author">J. Kim</a>, H. Yang, Y. Ju, I. Kim, B. Kim, <a href="https://mm.kaist.ac.kr/joon/" class="author">J. S. Chung</a><br>
+                        J. Kim, H. Yang, Y. Ju, I. Kim, B. Kim, J. S. Chung<br>
                         IEEE Transactions on Audio, Speech and Language Processing<br>
                         <a href="" class="btn btn-outline-primary btn-sm mt-2">PDF</a>
                         <a href="" class="btn btn-outline-primary btn-sm mt-2">Project Page</a>
                       </div>
                       <div class="card-body border-bottom"> 
                         <b>CrossSpeech++: Cross-lingual Speech Synthesis with Decoupled Language and Speaker Generation</b><br>
-                        <a href="https://sites.google.com/view/jhoonkim/" class="author">J. Kim</a>, H. Yang, Y. Ju, I. Kim, B. Kim, <a href="https://mm.kaist.ac.kr/joon/" class="author">J. S. Chung</a><br>
+                        J. Kim, H. Yang, Y. Ju, I. Kim, B. Kim, J. S. Chung<br>
                         IEEE Transactions on Audio, Speech and Language Processing<br>
                         <a href="" class="btn btn-outline-primary btn-sm mt-2">PDF</a>
                         <a href="" class="btn btn-outline-primary btn-sm mt-2">Project Page</a>
@@ -145,7 +145,7 @@ a.author:active { color: #BBBBBB; }
                       <!-- last box should not have border-bottom. -->
                       <div class="card-body">
                         <b>Seeing Speech and Sound: Distinguishing and Locating Audio Sources in Visual Scenes</b><br>
-                        <a href="https://sites.google.com/view/hyeonggonryu" class="author">H. Ryu</a>, S. Kim, <a href="https://mm.kaist.ac.kr/joon/" class="author">J. S. Chung</a>, <a href="https://ardasnck.github.io/" class="author">A. Senocak</a><br>
+                        H. Ryu, S. Kim, J. S. Chung, A. Senocak<br>
                         IEEE Conference on Computer Vision and Pattern Recognition<br>
                         <a href="" class="btn btn-outline-primary btn-sm mt-2">PDF</a>
                       </div>
@@ -203,6 +203,35 @@ a.author:active { color: #BBBBBB; }
         </div>
     </section>
 
+<!-- Automatically link author names in publications -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const authors = {
+        "J. Kim": "https://sites.google.com/view/jhoonkim/",
+        "H. Yang": "#",
+        "Y. Ju": "#",
+        "I. Kim": "#",
+        "B. Kim": "#",
+        "J. S. Chung": "https://mm.kaist.ac.kr/joon/",
+        "H. Ryu": "https://sites.google.com/view/hyeonggonryu",
+        "S. Kim": "#",
+        "A. Senocak": "https://ardasnck.github.io/"
+    };
+
+    const pubDivs = document.querySelectorAll("#pubs .card-body");
+
+    pubDivs.forEach(div => {
+        for (const [name, link] of Object.entries(authors)) {
+            const safeName = name.replace(/\./g, "\\.");
+            const regex = new RegExp(`\\b${safeName}\\b`, "g");
+            div.innerHTML = div.innerHTML.replace(
+                regex,
+                `<a class="author" href="${link}" target="_blank">${name}</a>`
+            );
+        }
+    });
+});
+</script>
 </body>
 </html>
 
