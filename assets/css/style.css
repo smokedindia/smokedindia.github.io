@@ -59,3 +59,53 @@
   background: #fff;
   border: 2px solid #0563bb;
 }
+
+/*--------------------------------------------------------------
+# Dark Mode Styles
+--------------------------------------------------------------*/
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a.author {
+  color: #bb86fc;
+}
+body.dark-mode a.author:hover {
+  color: #ddaaff;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar-brand {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+body.dark-mode .card .card-header {
+  background-color: #292929;
+  color: #e0e0e0;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .btn-outline-primary {
+  color: #bb86fc;
+  border-color: #bb86fc;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+body.dark-mode hr {
+  border-color: #444;
+}
