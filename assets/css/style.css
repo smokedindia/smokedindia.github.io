@@ -115,6 +115,22 @@ body.dark-mode .btn-outline-dark:hover {
   color: #121212 !important;          /* 글씨는 어두운색으로 대비 */
 }
 
+/* Dark mode for resume section */
+body.dark-mode .resume .resume-title {
+  color: #ffffff; /* 제목 글씨 흰색 */
+}
+
+body.dark-mode .resume .resume-item h4 {
+  color: #80bfff; /* 연한 파란색 */
+}
+
+body.dark-mode .resume .resume-item h5 {
+  background: #2a2a2a;     /* 어두운 배경 */
+  color: #cccccc;          /* 연한 글씨 */
+  border-radius: 4px;
+}
+
+
 /* Optional: 모든 텍스트 강제 적용 (필요시) */
 /* 
 body.dark-mode * {
