@@ -105,6 +105,16 @@ body.dark-mode hr {
   border-color: #444 !important;
 }
 
+body.dark-mode .btn-outline-dark {
+  color: #ddd !important;           /* 글씨를 밝은 회색으로 */
+  border-color: #ddd !important;    /* 테두리도 밝은 회색 */
+}
+
+body.dark-mode .btn-outline-dark:hover {
+  background-color: #ddd !important; /* 호버 시 배경도 밝게 */
+  color: #121212 !important;          /* 글씨는 어두운색으로 대비 */
+}
+
 /* Optional: 모든 텍스트 강제 적용 (필요시) */
 /* 
 body.dark-mode * {
