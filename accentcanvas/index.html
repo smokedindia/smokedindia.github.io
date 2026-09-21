@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accent Removal and Installation in Discrete Unit Space &mdash; Audio Samples</title>
+<meta name="description" content="Audio samples for bidirectional discrete-unit accent conversion: accent removal (L2 to L1) and accent installation (L1 to L2).">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css">
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Accent Removal and Accent Installation <span class="title-break">in Discrete Unit Space</span></h1>
+          <h2 class="subtitle is-5 venue-line">Anonymous submission &mdash; ICASSP 2027</h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Author One<sup>1</sup>,</span>
+            <span class="author-block">Author Two<sup>1</sup>,</span>
+            <span class="author-block">Author Three<sup>2</sup></span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Affiliation One,</span>
+            <span class="author-block"><sup>2</sup>Affiliation Two</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark is-static">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper (TBD)</span></a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark is-static">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv (TBD)</span></a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark is-static">
+                  <span class="icon"><i class="fab fa-github"></i></span><span>Code (TBD)</span></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified placeholder-box">
+          <p><em>[PLACEHOLDER &mdash; replace with the submitted abstract.]</em></p>
+          <p>
+            One or two sentences on the setting: textless accent conversion in discrete
+            unit space with real parallel supervision, over the bidirectional accent map
+            (L2&nbsp;&rarr;&nbsp;L1 removal and L1&nbsp;&rarr;&nbsp;L2 installation).
+          </p>
+          <p>
+            One or two sentences on the finding: conversion splits into removal and
+            installation, the two are asymmetric, and the asymmetry is a property of the
+            substrate rather than of the model.
+          </p>
+          <p>
+            One sentence on what the samples below show, and one on the evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section how-to-listen">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Audio samples</h2>
+        <div class="content has-text-justified">
+          <p>
+            Every row is one utterance, and every system on that row converted
+            <em>the same recording</em> of it. <b>Source</b> and <b>Target</b> are
+            natural recordings of the same prompt by the two speakers &mdash; the target
+            is what a perfect conversion would sound like, not a system output.
+            <b>Ours</b> and the baselines follow.
+          </p>
+          <p>
+            The 33 utterances here (15 removal, 18
+            installation) are exactly the stimuli of the subjective listening test, chosen
+            by a blind triage pass in which items were judged unlabelled and shuffled.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section direction-section">
+  <div class="container is-fluid">
+    <div class="direction-head">
+      <h2 class="title is-3">1. Accent removal <span class="arrow">L2 &rarr; L1</span></h2>
+      <p class="subtitle is-6">
+        Non-native source, native target. The conversion must <em>remove</em> the source
+        speaker's accent while keeping the content.
+      </p>
+    </div>
+    
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Arabic &rarr; Native (L1)<span class="tag is-light dir-tag">L2 &rarr; L1</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:92rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L2)</th><th class="gt">Target (L1, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN</th><th class="baseline">CosyAccent</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"Knowing him I review the old Scandinavian myths with clearer understanding"</span><br><span class="spk">YBAA &rarr; clb &middot; arctic_b0403</span></th><td><audio controls preload="none" src="audio/norm_arabic_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Mops sir eagerly answered the sailor at the wheel"</span><br><span class="spk">YBAA &rarr; bdl &middot; arctic_b0445</span></th><td><audio controls preload="none" src="audio/norm_arabic_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_01/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"New idea he volunteered brand new idea"</span><br><span class="spk">YBAA &rarr; bdl &middot; arctic_b0525</span></th><td><audio controls preload="none" src="audio/norm_arabic_02/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_02/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Eggshell is not good to eat"</span><br><span class="spk">YBAA &rarr; bdl &middot; arctic_b0517</span></th><td><audio controls preload="none" src="audio/norm_arabic_03/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_03/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"But already he had composed himself"</span><br><span class="spk">ABA &rarr; bdl &middot; arctic_b0515</span></th><td><audio controls preload="none" src="audio/norm_arabic_04/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_04/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"And each year something happened and I did not go"</span><br><span class="spk">YBAA &rarr; bdl &middot; arctic_b0405</span></th><td><audio controls preload="none" src="audio/norm_arabic_05/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_arabic_05/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Hindi &rarr; Native (L1)<span class="tag is-light dir-tag">L2 &rarr; L1</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:92rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L2)</th><th class="gt">Target (L1, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN</th><th class="baseline">CosyAccent</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"The scents of strange vegetation blew off the tropic land"</span><br><span class="spk">ASI &rarr; clb &middot; arctic_b0503</span></th><td><audio controls preload="none" src="audio/norm_hindi_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"The dirk mentioned by Wolf Larsen rested in its sheath on my hip"</span><br><span class="spk">RRBI &rarr; bdl &middot; arctic_b0409</span></th><td><audio controls preload="none" src="audio/norm_hindi_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_hindi_01/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Korean &rarr; Native (L1)<span class="tag is-light dir-tag">L2 &rarr; L1</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:92rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L2)</th><th class="gt">Target (L1, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN</th><th class="baseline">CosyAccent</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"He plodded on for half an hour when the hallucination arose again"</span><br><span class="spk">YDCK &rarr; bdl &middot; arctic_b0513</span></th><td><audio controls preload="none" src="audio/norm_korean_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Also she wouldn&#x27;t walk"</span><br><span class="spk">HKK &rarr; clb &middot; arctic_b0449</span></th><td><audio controls preload="none" src="audio/norm_korean_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_01/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Well did they eat"</span><br><span class="spk">YDCK &rarr; bdl &middot; arctic_b0435</span></th><td><audio controls preload="none" src="audio/norm_korean_02/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_korean_02/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Mandarin &rarr; Native (L1)<span class="tag is-light dir-tag">L2 &rarr; L1</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:92rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L2)</th><th class="gt">Target (L1, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN</th><th class="baseline">CosyAccent</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"Do you value your hide"</span><br><span class="spk">LXC &rarr; bdl &middot; arctic_b0511</span></th><td><audio controls preload="none" src="audio/norm_mandarin_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"The Russian music player the Count was her obedient slave"</span><br><span class="spk">LXC &rarr; clb &middot; arctic_b0523</span></th><td><audio controls preload="none" src="audio/norm_mandarin_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_mandarin_01/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Spanish &rarr; Native (L1)<span class="tag is-light dir-tag">L2 &rarr; L1</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:92rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L2)</th><th class="gt">Target (L1, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN</th><th class="baseline">CosyAccent</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"The scents of strange vegetation blew off the tropic land"</span><br><span class="spk">EBVS &rarr; bdl &middot; arctic_b0503</span></th><td><audio controls preload="none" src="audio/norm_spanish_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"After all superfluous flesh is gone what is left is stringy and resistant"</span><br><span class="spk">ERMS &rarr; bdl &middot; arctic_b0487</span></th><td><audio controls preload="none" src="audio/norm_spanish_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/tokan.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/cosyaccent_predur.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/norm_spanish_01/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+  </div>
+</section>
+
+<section class="section direction-section">
+  <div class="container is-fluid">
+    <div class="direction-head">
+      <h2 class="title is-3">2. Accent installation <span class="arrow">L1 &rarr; L2</span></h2>
+      <p class="subtitle is-6">
+        Native source, non-native target. The conversion must <em>install</em> the target
+        accent &mdash; the harder of the two directions, and the one the paper analyses.
+      </p>
+    </div>
+    
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Native (L1) &rarr; Hindi<span class="tag is-light dir-tag">L1 &rarr; L2</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:81rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L1)</th><th class="gt">Target (L2, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN L1&rarr;L2</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"He gave no reason but his motive was obvious enough"</span><br><span class="spk">bdl &rarr; RRBI &middot; arctic_b0411</span></th><td><audio controls preload="none" src="audio/inst_hindi_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_00/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"The Russian music player the Count was her obedient slave"</span><br><span class="spk">clb &rarr; RRBI &middot; arctic_b0523</span></th><td><audio controls preload="none" src="audio/inst_hindi_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_01/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_01/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"New idea he volunteered brand new idea"</span><br><span class="spk">bdl &rarr; SVBI &middot; arctic_b0525</span></th><td><audio controls preload="none" src="audio/inst_hindi_02/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_02/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_02/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_02/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_02/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_02/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"And there was Ethel Baird whom also you must remember"</span><br><span class="spk">clb &rarr; RRBI &middot; arctic_b0441</span></th><td><audio controls preload="none" src="audio/inst_hindi_03/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_03/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_03/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_03/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_03/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_03/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"He gave no reason but his motive was obvious enough"</span><br><span class="spk">bdl &rarr; SVBI &middot; arctic_b0411</span></th><td><audio controls preload="none" src="audio/inst_hindi_04/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_04/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_04/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_04/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_04/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_04/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"How valiantly I went at it that first day"</span><br><span class="spk">bdl &rarr; RRBI &middot; arctic_b0505</span></th><td><audio controls preload="none" src="audio/inst_hindi_05/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_05/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_05/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_05/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_05/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_hindi_05/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Native (L1) &rarr; Korean<span class="tag is-light dir-tag">L1 &rarr; L2</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:81rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L1)</th><th class="gt">Target (L2, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN L1&rarr;L2</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"Mops sir eagerly answered the sailor at the wheel"</span><br><span class="spk">bdl &rarr; HKK &middot; arctic_b0445</span></th><td><audio controls preload="none" src="audio/inst_korean_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_00/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"There were orange green gold green and a copper green"</span><br><span class="spk">bdl &rarr; YDCK &middot; arctic_b0425</span></th><td><audio controls preload="none" src="audio/inst_korean_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_01/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_01/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"He gave no reason but his motive was obvious enough"</span><br><span class="spk">clb &rarr; HKK &middot; arctic_b0411</span></th><td><audio controls preload="none" src="audio/inst_korean_02/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_02/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_02/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_02/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_02/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_02/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Your father&#x27;s fifth command he nodded"</span><br><span class="spk">clb &rarr; HKK &middot; arctic_b0419</span></th><td><audio controls preload="none" src="audio/inst_korean_03/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_03/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_03/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_03/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_03/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_03/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Not a wheel moved in his empire"</span><br><span class="spk">clb &rarr; YDCK &middot; arctic_b0475</span></th><td><audio controls preload="none" src="audio/inst_korean_04/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_04/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_04/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_04/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_04/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_korean_04/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Native (L1) &rarr; Mandarin<span class="tag is-light dir-tag">L1 &rarr; L2</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:81rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L1)</th><th class="gt">Target (L2, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN L1&rarr;L2</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"We are cooking on the coal stove and on the oil burners"</span><br><span class="spk">clb &rarr; LXC &middot; arctic_b0433</span></th><td><audio controls preload="none" src="audio/inst_mandarin_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_mandarin_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_mandarin_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_mandarin_00/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_mandarin_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_mandarin_00/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Native (L1) &rarr; Spanish<span class="tag is-light dir-tag">L1 &rarr; L2</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:81rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L1)</th><th class="gt">Target (L2, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN L1&rarr;L2</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"New idea he volunteered brand new idea"</span><br><span class="spk">clb &rarr; ERMS &middot; arctic_b0525</span></th><td><audio controls preload="none" src="audio/inst_spanish_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_spanish_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_spanish_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_spanish_00/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_spanish_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_spanish_00/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+
+<div class="cell-block">
+  <h3 class="title is-5 cell-title">Native (L1) &rarr; Vietnamese<span class="tag is-light dir-tag">L1 &rarr; L2</span></h3>
+  <div class="table-wrap">
+    <table class="table is-hoverable demo-table" style="min-width:81rem">
+      <thead><tr><th class="prompt">Utterance</th><th class="input">Source (L1)</th><th class="gt">Target (L2, natural)</th><th class="ours">Ours</th><th class="baseline">TokAN L1&rarr;L2</th><th class="baseline">RWA</th><th class="baseline">Vevo-Style</th></tr></thead>
+      <tbody><tr><th class="prompt"><span class="utt">"He had fulfilled his duty and paid properly"</span><br><span class="spk">bdl &rarr; THV &middot; arctic_b0509</span></th><td><audio controls preload="none" src="audio/inst_vietnamese_00/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_00/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_00/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_00/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_00/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_00/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"He had fulfilled his duty and paid properly"</span><br><span class="spk">bdl &rarr; HQTV &middot; arctic_b0509</span></th><td><audio controls preload="none" src="audio/inst_vietnamese_01/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_01/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_01/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_01/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_01/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_01/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Then there was the campaign"</span><br><span class="spk">clb &rarr; PNV &middot; arctic_b0473</span></th><td><audio controls preload="none" src="audio/inst_vietnamese_02/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_02/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_02/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_02/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_02/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_02/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"There were orange green gold green and a copper green"</span><br><span class="spk">bdl &rarr; HQTV &middot; arctic_b0425</span></th><td><audio controls preload="none" src="audio/inst_vietnamese_03/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_03/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_03/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_03/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_03/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_03/vevo.wav"></audio></td></tr><tr><th class="prompt"><span class="utt">"Then there was the campaign"</span><br><span class="spk">clb &rarr; HQTV &middot; arctic_b0473</span></th><td><audio controls preload="none" src="audio/inst_vietnamese_04/__src__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_04/__tgt__.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_04/ltcosy25.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_04/tokan_l1tol2.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_04/rwa.wav"></audio></td><td><audio controls preload="none" src="audio/inst_vietnamese_04/vevo.wav"></audio></td></tr></tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">The utterance column stays fixed &mdash; scroll the table sideways on a narrow screen.</p>
+</div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{placeholder2027accent,
+  title     = {Accent Removal and Accent Installation in Discrete Unit Space},
+  author    = {Anonymous},
+  booktitle = {ICASSP},
+  year      = {2027}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p class="back-link">
+            <a href="https://smokedindia.github.io/">&larr; Jaehun Kim</a>
+          </p>
+          <p>
+            This page uses the
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page
+            template, licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

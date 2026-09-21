@@ -1,0 +1,102 @@
+/* Nerfies-derived project page styling (CC BY-SA 4.0), plus the sample tables. */
+body { font-family: 'Noto Sans', sans-serif; }
+
+/* ── hero ──────────────────────────────────────────────────────────────────────
+   No negative margins here. Bulma already pulls a .subtitle up by 1.25rem, and a
+   second negative margin overlaps the two lines as soon as the title wraps -- which
+   is exactly what a narrow window does. Space is added, never removed. */
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(1.9rem, 5.2vw, 3rem);
+  line-height: 1.18;
+}
+.publication-title .title-break { display: inline-block; }   /* wraps as a unit, no <br> */
+.venue-line { color: #777; margin-top: .75rem !important; font-size: clamp(.95rem, 2.2vw, 1.25rem); }
+.publication-authors { font-family: 'Google Sans', sans-serif; margin-top: 1.2rem; line-height: 1.7; }
+.publication-authors .author-block { display: inline-block; margin-right: .4rem; }
+.publication-links { margin-top: 1.4rem; }
+.publication-links .link-block { display: inline-block; margin: .25rem; }
+.external-link.button { background-color: #363636; border-color: transparent; color: #fff; }
+.external-link.button.is-static { opacity: .75; }
+
+.hero-body { padding-top: 3.5rem; padding-bottom: 1.5rem; }
+.section { padding-top: 2rem; padding-bottom: 2rem; }
+
+.placeholder-box {
+  border: 1px dashed #c8c8c8; border-radius: 8px;
+  padding: 1.1rem 1.3rem; background: #fafafa;
+}
+.how-to-listen { padding-bottom: 0; }
+
+/* ── direction sections ───────────────────────────────────────────────────── */
+.direction-section { padding-top: 1.5rem; }
+.direction-head { border-top: 2px solid #ededed; padding-top: 1.6rem; margin-bottom: 1.6rem; }
+.direction-head .title { font-family: 'Google Sans', sans-serif; margin-bottom: .4rem; }
+.direction-head .arrow {
+  font-family: 'Noto Sans', sans-serif; font-size: 1rem; font-weight: 600;
+  color: #fff; background: #363636; border-radius: 999px;
+  padding: .2rem .7rem; margin-left: .5rem;
+  display: inline-block; white-space: nowrap;   /* never splits across lines */
+}
+.direction-head .subtitle { color: #666; max-width: 48rem; }
+
+.cell-block { margin-bottom: 2.4rem; }
+.cell-title { font-family: 'Google Sans', sans-serif; margin-bottom: .7rem; }
+.dir-tag { margin-left: .6rem; font-weight: 400; display: inline-block; }
+
+/* ── sample tables ────────────────────────────────────────────────────────────
+   `table-layout: fixed` + an explicit width per column is what keeps every system's
+   player the same size: under auto layout the browser sizes columns by their content,
+   so the column headed "Ours" -- the shortest label in the row -- came out narrowest
+   and squeezed its player. The table also refuses to shrink past `min-width`; the
+   wrapper scrolls instead, because crushing a nowrap cell is what made text from one
+   column overlap the next when the window narrowed. */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #ededed; border-radius: 8px;
+}
+.demo-table {
+  font-size: .9rem;
+  table-layout: fixed;
+  width: 100%;
+  /* min-width is set inline per table, from its own column count (build_demo.py:
+     PROMPT_REM + PLAYER_REM * n_cols) -- a shared value would stretch the narrower
+     direction's players. The player sets the column width, not the viewport: a native
+     audio element loses its timeline below ~170px. */
+  margin-bottom: 0;
+}
+.demo-table th, .demo-table td {
+  vertical-align: middle;
+  overflow-wrap: anywhere;   /* long tokens wrap inside the cell, never over it */
+}
+.demo-table thead th {
+  font-family: 'Google Sans', sans-serif;
+  border-bottom-width: 2px;
+  width: 11rem;              /* every audio column, identical */
+  white-space: normal;       /* a two-word label wraps, it does not spill */
+  line-height: 1.25;
+}
+.demo-table thead th.ours { color: #0b6cb7; }
+.demo-table thead th.input, .demo-table thead th.gt { color: #777; }
+.demo-table th.prompt {
+  width: 15rem; font-weight: 400; white-space: normal;
+  position: sticky; left: 0; z-index: 2;      /* stays put while the row scrolls */
+  background: #fff; border-right: 1px solid #ededed;
+}
+.demo-table tbody tr:hover th.prompt { background: #fafafa; }
+.demo-table .utt { font-family: 'Castoro', serif; color: #333; }
+.demo-table .spk { font-size: .78rem; color: #999; }
+.demo-table td.miss { color: #c9c9c9; text-align: center; }
+.demo-table audio { width: 100%; min-width: 0; height: 2.2rem; display: block; }
+
+.scroll-hint { font-size: .8rem; color: #999; margin: .35rem 0 0 .1rem; }
+
+.footer { padding: 2.5rem 1.5rem; }
+.back-link a { color: #363636; font-weight: 600; }
+
+@media screen and (max-width: 768px) {
+  .demo-table { font-size: .82rem; }
+  .demo-table th.prompt { width: 11rem; }
+  .container.is-fluid { padding-left: .75rem; padding-right: .75rem; }
+}
