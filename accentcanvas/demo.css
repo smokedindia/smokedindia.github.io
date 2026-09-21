@@ -73,14 +73,13 @@ body { font-family: 'Noto Sans', sans-serif; }
 .demo-table thead th {
   font-family: 'Google Sans', sans-serif;
   border-bottom-width: 2px;
-  width: 11rem;              /* every audio column, identical */
   white-space: normal;       /* a two-word label wraps, it does not spill */
   line-height: 1.25;
 }
 .demo-table thead th.ours { color: #0b6cb7; }
 .demo-table thead th.input, .demo-table thead th.gt { color: #777; }
 .demo-table th.prompt {
-  width: 15rem; font-weight: 400; white-space: normal;
+  font-weight: 400; white-space: normal;
   position: sticky; left: 0; z-index: 2;      /* stays put while the row scrolls */
   background: #fff; border-right: 1px solid #ededed;
 }
@@ -97,6 +96,6 @@ body { font-family: 'Noto Sans', sans-serif; }
 
 @media screen and (max-width: 768px) {
   .demo-table { font-size: .82rem; }
-  .demo-table th.prompt { width: 11rem; }
+  .demo-table colgroup col:first-child { width: 11rem; }
   .container.is-fluid { padding-left: .75rem; padding-right: .75rem; }
 }
